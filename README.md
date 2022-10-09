@@ -23,13 +23,17 @@ Usage of ./github-ratelimit-metrics:
 pflag: help requested
 ```
 
-Note, you can *also* configure the GitHub credentials via environment variables:
+Note, you can *also* configure all flags via environment variables:
 
 | Flag                     | Environment variable     |
 | ------------------------ | ------------------------ |
 | `github-app-id`          | `GITHUB_APP_ID`          |
 | `github-installation-id` | `GITHUB_INSTALLATION_ID` |
 | `github-private-key`     | `GITHUB_PRIVATE_KEY`     |
+| `refresh-interval`       | `REFRESH_INTERVAL`       |
+| `verbose`                | `VERBOSE`                |
+
+CLI flags have a higher precedence over the environment variables.
 
 ## Usage
 
@@ -37,7 +41,7 @@ Note, you can *also* configure the GitHub credentials via environment variables:
 export GITHUB_APP_ID="..."
 export GITHUB_INSTALLATION_ID="..."
 export GITHUB_PRIVATE_KEY="..."
-docker run --rm -it --env GITHUB_APP_ID --env GITHUB_INSTALLATION_ID --env GITHUB_PRIVATE_KEY -p8000:8000 ghcr.io/abatilo/github-ratelimit-metrics:v0.2.1 -v
+docker run --rm -it --env GITHUB_APP_ID --env GITHUB_INSTALLATION_ID --env GITHUB_PRIVATE_KEY -p8000:8000 ghcr.io/abatilo/github-ratelimit-metrics:v0.2.1 --verbose
 ```
 
 In another terminal, you can now run:
