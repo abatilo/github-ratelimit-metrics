@@ -46,7 +46,11 @@ var (
 	})
 )
 
-func updateMetrics(ctx context.Context, client *github.Client) {
+func updateMetrics(ctx context.Context, client *github.Client, verbose bool) {
+	if verbose {
+		log.Println("Refreshing metrics")
+	}
+
 	rateLimits, resp, err := client.RateLimits(ctx)
 	if err != nil {
 		log.Printf("Error getting rate limits: %v", err)
@@ -107,12 +111,9 @@ func main() {
 		ticker := time.NewTicker(refreshInterval)
 		client := github.NewClient(&http.Client{Transport: installationTransport})
 
-		updateMetrics(ctx, client)
+		updateMetrics(ctx, client, verbose)
 		for range ticker.C {
-			if verbose {
-				log.Println("Refreshing metrics")
-			}
-			updateMetrics(ctx, client)
+			updateMetrics(ctx, client, verbose)
 		}
 	}()
 
