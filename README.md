@@ -56,3 +56,12 @@ github_resources_core_reset 3599.148782767
 # TYPE github_resources_core_used gauge
 github_resources_core_used 0
 ```
+
+## Installation
+
+Docker containers are built for both `linux/amd64` and `linux/arm64`. Check out
+available versions
+[here](https://github.com/abatilo/github-ratelimit-metrics/pkgs/container/github-ratelimit-metrics)
+
+For Kubernetes users, find helm chart documentation
+[here](https://github.com/abatilo/charts/tree/main/charts/github-ratelimit-metrics)
