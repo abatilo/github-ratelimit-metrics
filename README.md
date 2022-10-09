@@ -1,5 +1,9 @@
 # github-ratelimit-metrics
 
+[![license](https://img.shields.io/github/license/abatilo/github-ratelimit-metrics.svg)](https://github.com/abatilo/github-ratelimit-metrics/blob/master/LICENSE)
+[![release](https://img.shields.io/github/release/abatilo/github-ratelimit-metrics.svg)](https://github.com/abatilo/github-ratelimit-metrics/releases/latest)
+[![GitHub release date](https://img.shields.io/github/release-date/abatilo/github-ratelimit-metrics.svg)](https://github.com/abatilo/github-ratelimit-metrics/releases)
+
 Do you have a GitHub App? Do you want to monitor how close you are to hitting
 your API rate limits? That's what this project is for.
 
